@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Nota D1"
+                android:hint="Nota letersise"
                 android:inputType="numberDecimal" />
 
             <EditText
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Nota D2"
+                android:hint="Nota matematikes"
                 android:inputType="numberDecimal" />
 
         </LinearLayout>
@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Nota Z1"
+                android:hint="Nota zgjedhje 1"
                 android:inputType="numberDecimal" />
 
             <EditText
@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Nota Z2"
+                android:hint="Nota zgjedhje 2"
                 android:inputType="numberDecimal" />
         </LinearLayout>
 
@@ -80,27 +80,29 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Koeficienti i Z1"
+                android:text="Koeficienti i lendes me zgjedhje 1"
                 android:textStyle="bold" />
 
             <Spinner
                 android:id="@+id/spinner_koeficienti_z1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Koeficienti i Z2"
+                android:text="Koeficienti i lendes me zgjedhje 2"
                 android:textStyle="bold" />
 
             <Spinner
                 android:id="@+id/spinner_koeficienti_z2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"/>
 
         </LinearLayout>
 
