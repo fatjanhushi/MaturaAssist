@@ -1,5 +1,6 @@
 package com.fatjoni.droid.maturaassist;
 
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,9 +9,14 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.io.IOException;
 
@@ -28,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.spinner_koeficienti_z1) Spinner f1;
     @Bind(R.id.spinner_koeficienti_z2) Spinner f2;
     @Bind(R.id.tv_prova) TextView prova;
+    @Bind(R.id.adView) AdView mAdView;
+    @Bind(R.id.v_piket) View piketView;
+
+    private static final String deviceId = "605C9D109BD6BC5D68A431986B59BBD3";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +63,18 @@ public class MainActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                AdRequest adRequest = new AdRequest.Builder().addTestDevice(deviceId).build();
+                mAdView.loadAd(adRequest);
+                mAdView.bringToFront();
+            }
+        }, 500);
 
     }
+
     @OnClick(R.id.btn_llogarit)
     public void llogarit(View v){
         Double dm, dd1, dd2, dz1, dz2;
@@ -79,7 +100,9 @@ public class MainActivity extends AppCompatActivity {
                     Double shuma = 0.0;
                     shuma = 5*(s1+s2);
 
+                    String str = shuma.toString();
                     prova.setText(shuma.toString());
+                    piketView.setVisibility(View.VISIBLE);
                 }else {
                     Toast.makeText(this,"Note me e madhe se 10.0! :P Ja ke fut kot!",Toast.LENGTH_SHORT).show();
                 }
@@ -114,4 +137,5 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }
