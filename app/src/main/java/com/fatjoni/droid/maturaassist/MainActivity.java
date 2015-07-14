@@ -4,10 +4,30 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.IOException;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
+    @Bind(R.id.mesatarja) EditText m;
+    @Bind(R.id.nota_letersise) EditText d1;
+    @Bind(R.id.nota_matematikes) EditText d2;
+    @Bind(R.id.nota_z1) EditText z1;
+    @Bind(R.id.nota_z2) EditText z2;
+    @Bind(R.id.spinner_koeficienti_shkolles) Spinner k;
+    @Bind(R.id.spinner_koeficienti_z1) Spinner f1;
+    @Bind(R.id.spinner_koeficienti_z2) Spinner f2;
+    @Bind(R.id.tv_prova) TextView prova;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +49,48 @@ public class MainActivity extends AppCompatActivity {
         koefShkolla.setAdapter(adapter);
         koefZ1.setAdapter(adapter);
         koefZ2.setAdapter(adapter);
+
+        ButterKnife.bind(this);
+
+
+    }
+    @OnClick(R.id.btn_llogarit)
+    public void llogarit(View v){
+        Double dm, dd1, dd2, dz1, dz2;
+
+        try{
+            dm = Double.parseDouble(String.valueOf(m.getText()));
+            dd1 = Double.parseDouble(String.valueOf(d1.getText()));
+            dd2 = Double.parseDouble(String.valueOf(d2.getText()));
+            dz1 = Double.parseDouble(String.valueOf(z1.getText()));
+            dz2 = Double.parseDouble(String.valueOf(z2.getText()));
+
+            if(dm < 4.5 || dd1 < 4.5 || dd2 < 4.5 || dz1 < 4.5 || dz2 < 4.5){
+                Toast.makeText(this,"Me note me te vogel se 4.5 kot i llogarit piket! :(",Toast.LENGTH_SHORT).show();
+            }else{
+                if (dm <= 10.0 && dd1 <= 10.0 && dd2 <= 10.0 && dz1 <= 10.0 && dz2 <= 10.0){
+                    Double dk = Double.parseDouble(String.valueOf(k.getSelectedItem().toString()));
+                    Double df1 = Double.parseDouble(String.valueOf(f1.getSelectedItem().toString()));
+                    Double df2 = Double.parseDouble(String.valueOf(f2.getSelectedItem().toString()));
+
+                    Double s1 = (26*dm + 20*(dd1+dd2))*dk;
+                    Double s2 = 17*(dz1*df1 + dz2*df2);
+
+                    Double shuma = 0.0;
+                    shuma = 5*(s1+s2);
+
+                    prova.setText(shuma.toString());
+                }else {
+                    Toast.makeText(this,"Note me e madhe se 10.0! :P Ja ke fut kot!",Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+        }catch (Exception e){
+            Toast.makeText(this,"Nuk llogariten piket po nuk i plotesove te gjitha inputet!", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
+
     }
 
     @Override

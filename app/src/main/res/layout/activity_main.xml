@@ -27,7 +27,7 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/provim_d1"
+                android:id="@+id/nota_letersise"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -36,7 +36,7 @@
                 android:inputType="numberDecimal" />
 
             <EditText
-                android:id="@+id/provim_d2"
+                android:id="@+id/nota_matematikes"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -52,7 +52,7 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/provim_z1"
+                android:id="@+id/nota_z1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -61,7 +61,7 @@
                 android:inputType="numberDecimal" />
 
             <EditText
-                android:id="@+id/provim_z2"
+                android:id="@+id/nota_z2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -87,8 +87,8 @@
                 android:id="@+id/spinner_koeficienti_z1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center_vertical"/>
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1" />
 
             <TextView
                 android:layout_width="0dp"
@@ -101,8 +101,8 @@
                 android:id="@+id/spinner_koeficienti_z2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center_vertical"/>
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1" />
 
         </LinearLayout>
 
@@ -124,13 +124,19 @@
                 android:id="@+id/spinner_koeficienti_shkolles"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1" />
         </LinearLayout>
 
         <Button
+            android:id="@+id/btn_llogarit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Llogarit" />
+        <TextView
+            android:id="@+id/tv_prova"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 </ScrollView>
