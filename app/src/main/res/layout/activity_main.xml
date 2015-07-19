@@ -8,7 +8,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingTop="16dp"
         tools:context=".MainActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:text="@string/header_title"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textAllCaps="true"/>
 
         <EditText
             android:id="@+id/mesatarja"
@@ -17,7 +28,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:ems="10"
-            android:hint="Nota Mesatare"
+            android:hint="@string/hint_mesatarja"
             android:inputType="numberDecimal" />
 
         <LinearLayout
@@ -33,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Nota letersise"
+                android:hint="@string/hint_nota_letersise"
                 android:inputType="numberDecimal" />
 
             <EditText
@@ -42,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Nota matematikes"
+                android:hint="@string/hint_nota_matematikes"
                 android:inputType="numberDecimal" />
 
         </LinearLayout>
@@ -60,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Nota zgjedhje 1"
+                android:hint="@string/hint_nota_z1"
                 android:inputType="numberDecimal" />
 
             <EditText
@@ -69,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Nota zgjedhje 2"
+                android:hint="@string/hint_nota_z2"
                 android:inputType="numberDecimal" />
         </LinearLayout>
 
@@ -83,7 +94,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Koeficienti i lendes me zgjedhje 1"
+                android:text="@string/hint_koeficienti_z1"
                 android:textStyle="bold" />
 
             <Spinner
@@ -91,14 +102,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginRight="2dp"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Koeficienti i lendes me zgjedhje 2"
+                android:text="@string/hint_koeficienti_z2"
                 android:textStyle="bold" />
 
             <Spinner
@@ -106,7 +116,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginRight="2dp"
                 android:layout_weight="1" />
 
         </LinearLayout>
@@ -122,7 +131,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Koeficienti i Shkolles"
+                android:text="@string/hint_koeficienti_shkolles"
                 android:textStyle="bold" />
 
             <Spinner
@@ -141,18 +150,20 @@
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
+            android:elevation="2dp"
             android:background="@color/colorPrimary"
-            android:text="Llogarit"
+            android:text="@string/hint_btn_llogarit"
             android:textColor="@android:color/white"
             android:textSize="20sp" />
 
-        <RelativeLayout
+        <FrameLayout
             android:id="@+id/v_piket"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
+            android:elevation="2dp"
             android:background="@color/colorAccent"
             android:padding="10dp"
             android:visibility="gone">
@@ -161,21 +172,12 @@
                 android:id="@+id/tv_prova"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
+                android:layout_gravity="center_horizontal"
                 android:textColor="@android:color/black"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_prova"
-                android:text="pike"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
+        </FrameLayout>
 
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"

@@ -1,5 +1,7 @@
 package com.fatjoni.droid.maturaassist;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -89,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
             if(dm < 4.5 || dd1 < 4.5 || dd2 < 4.5 || dz1 < 4.5 || dz2 < 4.5){
                 Toast.makeText(this,"Me note me te vogel se 4.5 kot i llogarit piket! :(",Toast.LENGTH_SHORT).show();
             }else{
-                if (dm <= 10.0 && dd1 <= 10.0 && dd2 <= 10.0 && dz1 <= 10.0 && dz2 <= 10.0){
+                if (dm <= 10.5 && dd1 <= 10.0 && dd2 <= 10.0 && dz1 <= 10.0 && dz2 <= 10.0){
                     Double dk = Double.parseDouble(String.valueOf(k.getSelectedItem().toString()));
                     Double df1 = Double.parseDouble(String.valueOf(f1.getSelectedItem().toString()));
                     Double df2 = Double.parseDouble(String.valueOf(f2.getSelectedItem().toString()));
@@ -100,8 +102,9 @@ public class MainActivity extends AppCompatActivity {
                     Double shuma = 0.0;
                     shuma = 5*(s1+s2);
 
-                    String str = shuma.toString();
-                    prova.setText(shuma.toString());
+                    String str = String.format("%.2f", shuma);
+                    prova.setText(str + " pike");
+
                     piketView.setVisibility(View.VISIBLE);
                 }else {
                     Toast.makeText(this,"Note me e madhe se 10.0! :P Ja ke fut kot!",Toast.LENGTH_SHORT).show();
@@ -132,6 +135,8 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent browserIntent = new Intent("android.intent.action.VIEW", Uri.parse("http://www.fatjoni.com"));
+            startActivity(browserIntent);
             return true;
         }
 

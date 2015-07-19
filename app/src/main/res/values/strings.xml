@@ -2,7 +2,7 @@
     <string name="app_name">Matura Assist</string>
 
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">fatjoni.com</string>
 
     <string-array name="koeficientet_array">
         <item>1.0</item>
@@ -13,4 +13,14 @@
     </string-array>
 
     <string name="banner_ad_unit_id">ca-app-pub-1837256325017145/3999914617</string>
+    <string name="header_title">Llogarit Piket e Matures</string>
+    <string name="hint_mesatarja">Nota Mesatare</string>
+    <string name="hint_nota_letersise">Nota letersise</string>
+    <string name="hint_nota_matematikes">Nota matematikes</string>
+    <string name="hint_nota_z1">Nota zgjedhje 1</string>
+    <string name="hint_nota_z2">Nota zgjedhje 2</string>
+    <string name="hint_koeficienti_z1">Koeficienti i lendes me zgjedhje 1</string>
+    <string name="hint_koeficienti_z2">Koeficienti i lendes me zgjedhje 2</string>
+    <string name="hint_koeficienti_shkolles">Koeficienti i Shkolles</string>
+    <string name="hint_btn_llogarit">Llogarit</string>
 </resources>
