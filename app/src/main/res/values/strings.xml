@@ -23,4 +23,7 @@
     <string name="hint_koeficienti_z2">Koeficienti i lendes me zgjedhje 2</string>
     <string name="hint_koeficienti_shkolles">Koeficienti i Shkolles</string>
     <string name="hint_btn_llogarit">Llogarit</string>
+    <string name="title_activity_result">ResultActivity</string>
+    <string name="piket_tuaja">Piket Tuaja:</string>
+    <string name="success_message">Suksese! - Beni renditjen e duhur te degeve!</string>
 </resources>

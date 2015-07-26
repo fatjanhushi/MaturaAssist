@@ -1,191 +1,190 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingTop="16dp"
         tools:context=".MainActivity">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="16dp"
-            android:text="@string/header_title"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:textAllCaps="true"/>
 
-        <EditText
-            android:id="@+id/mesatarja"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:ems="10"
-            android:hint="@string/hint_mesatarja"
-            android:inputType="numberDecimal" />
+            android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/nota_letersise"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="@string/hint_nota_letersise"
-                android:inputType="numberDecimal" />
+                android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/nota_matematikes"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="@string/hint_nota_matematikes"
-                android:inputType="numberDecimal" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/header_title"
+                    android:textAllCaps="true"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-        </LinearLayout>
+                <EditText
+                    android:id="@+id/mesatarja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:ems="10"
+                    android:hint="@string/hint_mesatarja"
+                    android:inputType="numberDecimal" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/nota_z1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="@string/hint_nota_z1"
-                android:inputType="numberDecimal" />
+                    <EditText
+                        android:id="@+id/nota_letersise"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/hint_nota_letersise"
+                        android:inputType="numberDecimal" />
 
-            <EditText
-                android:id="@+id/nota_z2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="@string/hint_nota_z2"
-                android:inputType="numberDecimal" />
-        </LinearLayout>
+                    <EditText
+                        android:id="@+id/nota_matematikes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/hint_nota_matematikes"
+                        android:inputType="numberDecimal" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp"
-            android:orientation="horizontal">
+                </LinearLayout>
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/hint_koeficienti_z1"
-                android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal">
 
-            <Spinner
-                android:id="@+id/spinner_koeficienti_z1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1" />
+                    <EditText
+                        android:id="@+id/nota_z1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/hint_nota_z1"
+                        android:inputType="numberDecimal" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/hint_koeficienti_z2"
-                android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/nota_z2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/hint_nota_z2"
+                        android:inputType="numberDecimal" />
+                </LinearLayout>
 
-            <Spinner
-                android:id="@+id/spinner_koeficienti_z2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    android:orientation="horizontal">
 
-        </LinearLayout>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/hint_koeficienti_z1"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinner_koeficienti_z1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/hint_koeficienti_z2"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinner_koeficienti_z2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/hint_koeficienti_shkolles"
-                android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/hint_koeficienti_shkolles"
+                        android:textStyle="bold" />
 
-            <Spinner
-                android:id="@+id/spinner_koeficienti_shkolles"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1" />
-        </LinearLayout>
+                    <Spinner
+                        android:id="@+id/spinner_koeficienti_shkolles"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1" />
+                </LinearLayout>
 
-        <Button
-            android:id="@+id/btn_llogarit"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:elevation="2dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/hint_btn_llogarit"
-            android:textColor="@android:color/white"
-            android:textSize="20sp" />
+                <Button
+                    android:id="@+id/btn_llogarit"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="66dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/colorPrimary"
+                    android:elevation="2dp"
+                    android:text="@string/hint_btn_llogarit"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
 
-        <FrameLayout
-            android:id="@+id/v_piket"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:elevation="2dp"
-            android:background="@color/colorAccent"
-            android:padding="10dp"
-            android:visibility="gone">
+            </LinearLayout>
+        </ScrollView>
 
-            <TextView
-                android:id="@+id/tv_prova"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textColor="@android:color/black"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+    </LinearLayout>
 
-        </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
 
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             ads:adSize="BANNER"
-            ads:adUnitId="@string/banner_ad_unit_id"></com.google.android.gms.ads.AdView>
+            ads:adUnitId="@string/banner_ad_unit_id">
+        </com.google.android.gms.ads.AdView>
 
     </LinearLayout>
-
-</ScrollView>
+</RelativeLayout>

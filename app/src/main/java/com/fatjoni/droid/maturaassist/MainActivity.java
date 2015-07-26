@@ -27,6 +27,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String INTENT_MESSAGE = "Intent Message";
     @Bind(R.id.mesatarja) EditText m;
     @Bind(R.id.nota_letersise) EditText d1;
     @Bind(R.id.nota_matematikes) EditText d2;
@@ -35,11 +36,9 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.spinner_koeficienti_shkolles) Spinner k;
     @Bind(R.id.spinner_koeficienti_z1) Spinner f1;
     @Bind(R.id.spinner_koeficienti_z2) Spinner f2;
-    @Bind(R.id.tv_prova) TextView prova;
     @Bind(R.id.adView) AdView mAdView;
-    @Bind(R.id.v_piket) View piketView;
 
-    private static final String deviceId = "605C9D109BD6BC5D68A431986B59BBD3";
+    public static final String DEVICE_ID = "605C9D109BD6BC5D68A431986B59BBD3";
 
 
     @Override
@@ -69,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                AdRequest adRequest = new AdRequest.Builder().addTestDevice(deviceId).build();
+                AdRequest adRequest = new AdRequest.Builder().addTestDevice(DEVICE_ID).build();
                 mAdView.loadAd(adRequest);
                 mAdView.bringToFront();
             }
@@ -103,9 +102,12 @@ public class MainActivity extends AppCompatActivity {
                     shuma = 5*(s1+s2);
 
                     String str = String.format("%.2f", shuma);
-                    prova.setText(str + " pike");
+                    str = str + " pike";
 
-                    piketView.setVisibility(View.VISIBLE);
+                    Intent intent = new Intent(this, ResultActivity.class);
+                    intent.putExtra(INTENT_MESSAGE, str);
+                    startActivity(intent);
+
                 }else {
                     Toast.makeText(this,"Note me e madhe se 10.0! :P Ja ke fut kot!",Toast.LENGTH_SHORT).show();
                 }
