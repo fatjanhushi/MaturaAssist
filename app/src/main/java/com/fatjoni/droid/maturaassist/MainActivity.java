@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             if(dm < 4.5 || dd1 < 4.5 || dd2 < 4.5 || dz1 < 4.5 || dz2 < 4.5){
                 Toast.makeText(this,"Me note me te vogel se 4.5 kot i llogarit piket! :(",Toast.LENGTH_SHORT).show();
             }else{
-                if (dm <= 10.5 && dd1 <= 10.0 && dd2 <= 10.0 && dz1 <= 10.0 && dz2 <= 10.0){
+                if (dm <= 11.5 && dd1 <= 10.0 && dd2 <= 10.0 && dz1 <= 10.0 && dz2 <= 10.0){
                     Double dk = Double.parseDouble(String.valueOf(k.getSelectedItem().toString()));
                     Double df1 = Double.parseDouble(String.valueOf(f1.getSelectedItem().toString()));
                     Double df2 = Double.parseDouble(String.valueOf(f2.getSelectedItem().toString()));
